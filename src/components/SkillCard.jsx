@@ -1,49 +1,55 @@
 import { useState } from 'react'
 import { getCat } from '../utils/categories.js'
-import styles from './PluginCard.module.css'
+import styles from './SkillCard.module.css'
 
-export default function PluginCard({ plugin, onSelect }) {
+export default function SkillCard({ skill, onSelect }) {
   const [copied, setCopied] = useState(false)
-  const cat = getCat(plugin.category)
+  const cat = getCat(skill.category)
+  const isFromBundle = skill.pluginId !== skill.skillId
 
   function copyPrompt(e) {
     e.stopPropagation()
-    navigator.clipboard.writeText(`Load the "${plugin.name}" plugin from the company skill marketplace.`)
+    navigator.clipboard.writeText(
+      `Load the "${skill.name}" skill from the company skill marketplace.`
+    )
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
 
   return (
-    <article className={styles.card} onClick={() => onSelect(plugin)}>
+    <article className={styles.card} onClick={() => onSelect(skill)}>
       <div className={styles.top}>
         <span className={styles.category} style={{ color: cat.color, background: cat.bg }}>
           <span className={styles.dot} style={{ background: cat.dot }} />
-          {plugin.category}
+          {skill.category}
         </span>
-        <span className={styles.version}>v{plugin.version}</span>
+        <span className={styles.version}>v{skill.version}</span>
       </div>
 
-      <h3 className={styles.name}>{plugin.name}</h3>
-      <p className={styles.description}>{plugin.description}</p>
+      <h3 className={styles.name}>{skill.name}</h3>
+      <p className={styles.description}>{skill.description}</p>
 
       <div className={styles.tags}>
-        {plugin.tags.map(t => (
+        {skill.tags.map(t => (
           <span key={t} className={styles.tag}>{t}</span>
         ))}
       </div>
 
       <div className={styles.footer}>
-        <span className={styles.author}>by {plugin.author}</span>
+        <div className={styles.meta}>
+          <span className={styles.author}>by {skill.author}</span>
+          {isFromBundle && (
+            <span className={styles.bundle} title={`Part of ${skill.pluginName}`}>
+              ◆ {skill.pluginName}
+            </span>
+          )}
+        </div>
         <button
           className={`${styles.copy} ${copied ? styles.done : ''}`}
           onClick={copyPrompt}
           title="Copy install prompt"
         >
-          {copied ? (
-            <><CheckIcon /> Copied</>
-          ) : (
-            <><CopyIcon /> Copy prompt</>
-          )}
+          {copied ? <><CheckIcon /> Copied</> : <><CopyIcon /> Copy prompt</>}
         </button>
       </div>
     </article>

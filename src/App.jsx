@@ -3,44 +3,45 @@ import { useMarketplace } from './hooks/useMarketplace.js'
 import { CATEGORIES } from './utils/categories.js'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
-import PluginCard from './components/PluginCard.jsx'
-import PluginDetail from './components/PluginDetail.jsx'
+import SkillCard from './components/SkillCard.jsx'
+import SkillDetail from './components/SkillDetail.jsx'
 import styles from './App.module.css'
 
 export default function App() {
-  const { plugins, tagIndex, loading, error } = useMarketplace()
-  const [query, setQuery] = useState('')
+  const { skills, tagIndex, loading, error } = useMarketplace()
+  const [query, setQuery]               = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
-  const [activeTag, setActiveTag] = useState(null)
-  const [selected, setSelected] = useState(null)
+  const [activeTag, setActiveTag]       = useState(null)
+  const [selected, setSelected]         = useState(null)
 
   const filtered = useMemo(() => {
-    return plugins.filter(p => {
-      if (activeCategory !== 'All' && p.category !== activeCategory) return false
-      if (activeTag && !p.tags.includes(activeTag)) return false
+    return skills.filter(s => {
+      if (activeCategory !== 'All' && s.category !== activeCategory) return false
+      if (activeTag && !s.tags.includes(activeTag)) return false
       if (!query.trim()) return true
       const q = query.toLowerCase()
-      // Search name, description, tags, author, id
       return (
-        p.name.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.tags.some(t => t.includes(q)) ||
-        p.author.toLowerCase().includes(q) ||
-        p.id.toLowerCase().includes(q)
+        s.name.toLowerCase().includes(q) ||
+        s.description.toLowerCase().includes(q) ||
+        s.tags.some(t => t.includes(q)) ||
+        s.author.toLowerCase().includes(q) ||
+        s.pluginName.toLowerCase().includes(q) ||
+        s.skillId.toLowerCase().includes(q)
       )
     })
-  }, [plugins, query, activeCategory, activeTag])
+  }, [skills, query, activeCategory, activeTag])
 
+  // Category counts based on skills, not plugins
   const counts = useMemo(() => {
-    const c = { All: plugins.length }
-    plugins.forEach(p => { c[p.category] = (c[p.category] || 0) + 1 })
+    const c = { All: skills.length }
+    skills.forEach(s => { c[s.category] = (c[s.category] || 0) + 1 })
     return c
-  }, [plugins])
+  }, [skills])
 
   const popularTags = useMemo(() => {
     return Object.entries(tagIndex)
       .sort((a, b) => b[1].length - a[1].length)
-      .slice(0, 10)
+      .slice(0, 12)
       .map(([tag]) => tag)
   }, [tagIndex])
 
@@ -54,13 +55,13 @@ export default function App() {
 
   return (
     <div className={styles.app}>
-      <Header total={plugins.length} />
+      <Header totalSkills={skills.length} />
       <Hero query={query} onQueryChange={q => { setQuery(q); setActiveTag(null) }} />
 
       <main className={styles.main}>
         <div className={styles.inner}>
 
-          {/* Category + tag filters */}
+          {/* Filters */}
           <div className={styles.filtersRow}>
             <div className={styles.categoryFilters}>
               {CATEGORIES.map(cat => (
@@ -74,7 +75,6 @@ export default function App() {
                 </button>
               ))}
             </div>
-
             {popularTags.length > 0 && (
               <div className={styles.tagFilters}>
                 {popularTags.map(tag => (
@@ -92,15 +92,17 @@ export default function App() {
 
           {/* Results line */}
           <div className={styles.resultsRow}>
-            <span className={styles.resultsText}>
-              {hasFilters ? `${filtered.length} plugin${filtered.length !== 1 ? 's' : ''} found` : 'All plugins'}
+            <span>
+              {hasFilters
+                ? `${filtered.length} skill${filtered.length !== 1 ? 's' : ''} found`
+                : `${skills.length} skills`}
             </span>
             {hasFilters && (
               <button className={styles.clearBtn} onClick={clearFilters}>Clear filters</button>
             )}
           </div>
 
-          {/* States */}
+          {/* Loading */}
           {loading && (
             <div className={styles.state}>
               <div className={styles.spinner} />
@@ -108,29 +110,32 @@ export default function App() {
             </div>
           )}
 
+          {/* Error */}
           {error && (
             <div className={styles.errorState}>
               <strong>Could not load marketplace.</strong> {error}
             </div>
           )}
 
+          {/* Empty */}
           {!loading && !error && filtered.length === 0 && (
             <div className={styles.emptyState}>
               <div className={styles.emptyIcon}>◇</div>
-              <h3>No plugins match {query ? `"${query}"` : 'these filters'}</h3>
+              <h3>No skills match {query ? `"${query}"` : 'these filters'}</h3>
               <p>
                 Try a different search, or{' '}
                 <a href="https://github.com/your-org/skill-hub/issues/new" target="_blank" rel="noreferrer">
-                  submit a plugin request
+                  submit a skill request
                 </a>.
               </p>
             </div>
           )}
 
+          {/* Grid */}
           {!loading && !error && filtered.length > 0 && (
             <div className={styles.grid}>
-              {filtered.map(p => (
-                <PluginCard key={p.id} plugin={p} onSelect={setSelected} />
+              {filtered.map(s => (
+                <SkillCard key={`${s.pluginId}-${s.skillId}`} skill={s} onSelect={setSelected} />
               ))}
             </div>
           )}
@@ -141,10 +146,10 @@ export default function App() {
               <h2 className={styles.howTitle}>How it works</h2>
               <div className={styles.steps}>
                 {[
-                  ['Find a plugin', 'Browse or search for the skill you need. Filter by category or tag.'],
+                  ['Find a skill', 'Browse or search for what you need. Filter by category or tag.'],
                   ['Copy the install prompt', 'One click copies a prompt you paste directly into Claude.'],
-                  ['Claude installs it', 'Claude fetches the plugin from the marketplace and loads it into your session immediately.'],
-                  ['Or ask Claude directly', '"Is there a plugin for SQL?" — Claude checks the marketplace and installs it for you.'],
+                  ['Claude loads it', 'Claude fetches the skill from the marketplace and applies it to your session immediately.'],
+                  ['Or ask Claude directly', '"Is there a skill for SQL?" — Claude checks the marketplace and loads it for you.'],
                 ].map(([title, desc], i) => (
                   <div key={i} className={styles.step}>
                     <div className={styles.stepNum}>{i + 1}</div>
@@ -161,7 +166,7 @@ export default function App() {
         </div>
       </main>
 
-      <PluginDetail plugin={selected} onClose={() => setSelected(null)} />
+      <SkillDetail skill={selected} onClose={() => setSelected(null)} />
     </div>
   )
 }
