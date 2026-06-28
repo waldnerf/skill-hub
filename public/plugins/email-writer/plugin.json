@@ -1,15 +1,13 @@
 {
   "id": "email-writer",
   "name": "Professional Email Writer",
-  "version": "1.3",
+  "version": "0.0.1",
   "description": "Drafts clear, well-toned professional emails for any situation — proposals, follow-ups, difficult conversations, stakeholder updates.",
   "category": "Communication",
   "tags": ["email", "communication", "writing", "drafting"],
-  "author": "HR Team",
+  "author": "Franz Waldner",
   "approved": true,
-  "added": "2026-02-10",
+  "added": "2026-06-28",
   "example_prompt": "Write a follow-up email to a client who hasn't responded in two weeks",
-  "skill": {
-    "path": "SKILL.md"
-  }
+  "skill": { "path": "SKILL.md" }
 }

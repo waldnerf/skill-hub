@@ -1,8 +1,12 @@
 ---
-id: pptx-builder
-version: 2.0
-author: Communications Team
+name: pptx-builder
+description: "Use this skill when the user needs to create, structure or outline a PowerPoint presentation. Produces slide-by-slide content with headlines, bullets and speaker notes following best-practice slide design."
+contributor: Franz Waldner
+version: 0.0.1
+status: TESTING — this is a sample skill for marketplace validation purposes only. Do not use in production.
 ---
+
+> ⚠️ **Testing skill** — created by Franz Waldner for marketplace validation. Not approved for production use.
 
 # PowerPoint Builder
 

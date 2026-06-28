@@ -1,8 +1,12 @@
 ---
-id: sql-writer
-version: 1.2
-author: Data Team
+name: sql-writer
+description: "Use this skill when the user needs to write, explain, debug or optimise SQL queries. Covers any SQL dialect including PostgreSQL, BigQuery, Snowflake, SQL Server, MySQL and SQLite."
+contributor: Franz Waldner
+version: 0.0.1
+status: TESTING — this is a sample skill for marketplace validation purposes only. Do not use in production.
 ---
+
+> ⚠️ **Testing skill** — created by Franz Waldner for marketplace validation. Not approved for production use.
 
 # SQL Query Writer
 

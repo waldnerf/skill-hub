@@ -1,15 +1,13 @@
 {
   "id": "sql-writer",
   "name": "SQL Query Writer",
-  "version": "1.2",
+  "version": "0.0.1",
   "description": "Writes, explains and optimises SQL queries for any dialect. Handles joins, CTEs, window functions and performance tuning.",
   "category": "Data",
   "tags": ["sql", "database", "queries", "analytics"],
-  "author": "Data Team",
+  "author": "Franz Waldner",
   "approved": true,
-  "added": "2026-01-15",
+  "added": "2026-06-28",
   "example_prompt": "Write a query that shows monthly revenue by product category for the last 12 months",
-  "skill": {
-    "path": "SKILL.md"
-  }
+  "skill": { "path": "SKILL.md" }
 }

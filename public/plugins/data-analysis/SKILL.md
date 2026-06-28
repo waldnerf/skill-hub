@@ -1,8 +1,12 @@
 ---
-id: data-analysis
-version: 1.1
-author: Data Team
+name: data-analysis
+description: "Use this skill when the user needs help analysing data, choosing a statistical method, writing Python or R analysis code, or interpreting results in plain language."
+contributor: Franz Waldner
+version: 0.0.1
+status: TESTING — this is a sample skill for marketplace validation purposes only. Do not use in production.
 ---
+
+> ⚠️ **Testing skill** — created by Franz Waldner for marketplace validation. Not approved for production use.
 
 # Data Analysis Assistant
 

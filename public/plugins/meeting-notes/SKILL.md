@@ -1,8 +1,12 @@
 ---
-id: meeting-notes
-version: 1.0
-author: Operations Team
+name: meeting-notes
+description: "Use this skill when the user wants to structure, summarise or clean up meeting notes or transcripts. Produces a formatted summary with decisions, actions, owners and open questions clearly separated."
+contributor: Franz Waldner
+version: 0.0.1
+status: TESTING — this is a sample skill for marketplace validation purposes only. Do not use in production.
 ---
+
+> ⚠️ **Testing skill** — created by Franz Waldner for marketplace validation. Not approved for production use.
 
 # Meeting Notes Structurer
 

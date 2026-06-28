@@ -1,0 +1,35 @@
+{
+  "id": "communicator-toolkit",
+  "name": "Communicator Toolkit",
+  "version": "0.0.1",
+  "description": "A bundle of three communication skills for consulting and leadership contexts: stakeholder updates, presentation narrative, and workshop facilitation. Example of a multi-skill plugin.",
+  "category": "Communication",
+  "tags": ["communication", "writing", "presentation", "strategy"],
+  "author": "Franz Waldner",
+  "approved": true,
+  "added": "2026-06-28",
+  "example_prompt": "Help me write a stakeholder update for our AI programme",
+  "skills": [
+    {
+      "id": "stakeholder-update",
+      "name": "Stakeholder Update Writer",
+      "description": "Writes concise, well-structured stakeholder updates for programmes, projects and initiatives.",
+      "path": "skills/stakeholder-update/SKILL.md",
+      "example_prompt": "Write a stakeholder update for our AI transformation programme — we're on track but budget is tight"
+    },
+    {
+      "id": "presentation-narrative",
+      "name": "Presentation Narrative Builder",
+      "description": "Builds a clear storyline and narrative arc for a presentation before any slides are created.",
+      "path": "skills/presentation-narrative/SKILL.md",
+      "example_prompt": "Help me build the narrative for a board presentation on our digital strategy"
+    },
+    {
+      "id": "workshop-facilitator",
+      "name": "Workshop Facilitator Guide",
+      "description": "Designs workshop agendas, facilitation guides and exercises for strategy, ideation or alignment sessions.",
+      "path": "skills/workshop-facilitator/SKILL.md",
+      "example_prompt": "Design a half-day workshop to align leadership on our AI priorities"
+    }
+  ]
+}

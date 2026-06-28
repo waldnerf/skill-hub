@@ -1,8 +1,12 @@
 ---
-id: email-writer
-version: 1.3
-author: HR Team
+name: email-writer
+description: "Use this skill when the user needs to draft, rewrite or improve a professional email. Covers all tones and situations including follow-ups, difficult conversations, proposals and stakeholder updates."
+contributor: Franz Waldner
+version: 0.0.1
+status: TESTING — this is a sample skill for marketplace validation purposes only. Do not use in production.
 ---
+
+> ⚠️ **Testing skill** — created by Franz Waldner for marketplace validation. Not approved for production use.
 
 # Professional Email Writer
 

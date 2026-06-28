@@ -1,8 +1,9 @@
 {
-  "generated": "2026-06-28T11:48:43.049Z",
+  "generated": "2026-06-28T12:01:06.151Z",
   "version": "1",
-  "total": 5,
+  "total": 6,
   "plugins": [
+    "communicator-toolkit",
     "data-analysis",
     "email-writer",
     "meeting-notes",
@@ -20,6 +21,7 @@
       "sql-writer"
     ],
     "communication": [
+      "communicator-toolkit",
       "email-writer"
     ],
     "data": [
@@ -47,6 +49,7 @@
       "pptx-builder"
     ],
     "presentation": [
+      "communicator-toolkit",
       "pptx-builder"
     ],
     "python": [
@@ -64,10 +67,14 @@
     "statistics": [
       "data-analysis"
     ],
+    "strategy": [
+      "communicator-toolkit"
+    ],
     "summary": [
       "meeting-notes"
     ],
     "writing": [
+      "communicator-toolkit",
       "email-writer"
     ]
   }
