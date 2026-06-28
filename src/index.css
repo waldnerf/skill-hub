@@ -1,8 +1,4 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --ink: #111118;
@@ -10,52 +6,32 @@
   --ink-soft: #7a7a96;
   --ink-faint: #b0b0c8;
   --surface: #f5f5f8;
-  --surface-raised: #ffffff;
+  --white: #ffffff;
   --border: rgba(17,17,24,0.08);
   --border-mid: rgba(17,17,24,0.14);
-
   --accent: #1a1a8c;
   --accent-mid: #2828b8;
   --accent-soft: #eeeef9;
-  --accent-glow: rgba(26,26,140,0.12);
-
+  --accent-glow: rgba(26,26,140,0.1);
   --green: #0d7a4e;
   --green-soft: #e6f5ee;
-
+  --cat-data-color: #1a3a8c; --cat-data-bg: #e8edf9; --cat-data-dot: #3a5fbf;
+  --cat-productivity-color: #1a6b3a; --cat-productivity-bg: #e6f3eb; --cat-productivity-dot: #2e9e5a;
+  --cat-communication-color: #7a2080; --cat-communication-bg: #f4e8f5; --cat-communication-dot: #a030b0;
+  --cat-strategy-color: #8a3a00; --cat-strategy-bg: #f5ece6; --cat-strategy-dot: #c05010;
   --font-serif: Georgia, 'Times New Roman', serif;
   --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: 'Courier New', Courier, monospace;
-
-  --radius: 10px;
-  --radius-sm: 6px;
-  --radius-lg: 16px;
-  --shadow-sm: 0 1px 4px rgba(17,17,24,0.06);
+  --radius: 10px; --radius-sm: 6px; --radius-lg: 16px;
   --shadow: 0 2px 12px rgba(17,17,24,0.08);
   --shadow-lg: 0 8px 32px rgba(17,17,24,0.12);
   --shadow-xl: 0 20px 60px rgba(17,17,24,0.16);
-  --transition: 0.18s ease;
+  --transition: 0.16s ease;
 }
 
 html { font-size: 16px; }
-
-body {
-  font-family: var(--font-sans);
-  background: var(--surface);
-  color: var(--ink);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-serif);
-  font-weight: normal;
-  line-height: 1.25;
-}
-
+body { font-family: var(--font-sans); background: var(--surface); color: var(--ink); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4 { font-family: var(--font-serif); font-weight: normal; line-height: 1.25; }
 code, pre { font-family: var(--font-mono); }
 button { font-family: var(--font-sans); cursor: pointer; border: none; background: none; }
-input, select, textarea { font-family: var(--font-sans); }
-
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(17,17,24,0.14); border-radius: 3px; }
+::-webkit-scrollbar { width: 5px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 3px; }

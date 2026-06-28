@@ -1,114 +1,19 @@
-.hero {
-  background: var(--ink);
-  padding: 72px 32px 56px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.inner {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.eyebrow {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 18px;
-}
-
-.title {
-  font-family: var(--font-serif);
-  font-size: clamp(32px, 5vw, 48px);
-  color: #ffffff;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-
-.sub {
-  font-size: 16px;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.65;
-  max-width: 520px;
-  margin: 0 auto 36px;
-}
-
+.hero { background: var(--ink); padding: 72px 32px 52px; }
+.inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 18px; }
+.title { font-family: var(--font-serif); font-size: clamp(30px,5vw,46px); color: #fff; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; }
+.sub { font-size: 15.5px; color: rgba(255,255,255,0.48); line-height: 1.65; max-width: 500px; margin: 0 auto 34px; }
 .searchWrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 12px;
-  padding: 0 18px;
-  transition: border-color var(--transition), background var(--transition);
+  display: flex; align-items: center; gap: 0;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px; padding: 0 18px; transition: border-color var(--transition), background var(--transition);
 }
-
-.searchWrap:focus-within {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.25);
-}
-
-.searchIcon {
-  color: rgba(255,255,255,0.35);
-  flex-shrink: 0;
-  margin-right: 12px;
-}
-
-.searchInput {
-  flex: 1;
-  background: none;
-  border: none;
-  outline: none;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 18px 0;
-  letter-spacing: 0.01em;
-}
-
-.searchInput::placeholder {
-  color: rgba(255,255,255,0.28);
-}
-
-.clearBtn {
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.35);
-  font-size: 14px;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
-  transition: color var(--transition);
-}
-
-.clearBtn:hover { color: rgba(255,255,255,0.7); }
-
-.hint {
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.3);
-}
-
-.hintChip {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  color: rgba(255,255,255,0.5);
-  padding: 4px 12px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: all var(--transition);
-  font-family: var(--font-sans);
-}
-
-.hintChip:hover {
-  background: rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.8);
-}
+.searchWrap:focus-within { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); }
+.icon { color: rgba(255,255,255,0.3); flex-shrink: 0; margin-right: 12px; }
+.input { flex: 1; background: none; border: none; outline: none; color: #fff; font-size: 15.5px; padding: 17px 0; font-family: var(--font-sans); }
+.input::placeholder { color: rgba(255,255,255,0.25); }
+.clear { background: none; border: none; color: rgba(255,255,255,0.3); font-size: 13px; cursor: pointer; padding: 4px 6px; transition: color var(--transition); }
+.clear:hover { color: rgba(255,255,255,0.7); }
+.suggestions { margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 12.5px; color: rgba(255,255,255,0.28); flex-wrap: wrap; }
+.chip { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: rgba(255,255,255,0.45); padding: 4px 12px; font-size: 12px; cursor: pointer; transition: all var(--transition); font-family: var(--font-sans); }
+.chip:hover { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }

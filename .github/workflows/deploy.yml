@@ -1,4 +1,4 @@
-name: Deploy to Cloudflare Pages
+name: Validate, Generate & Deploy
 
 on:
   push:
@@ -9,7 +9,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Build and deploy
 
     steps:
       - name: Checkout
@@ -24,11 +23,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate skills registry
-        run: node scripts/validate-registry.js
+      - name: Validate plugins & generate marketplace.json
+        run: node scripts/generate-marketplace.js
+        # This step:
+        # 1. Validates every plugin folder (schema, structure, SKILL.md)
+        # 2. Generates public/marketplace.json with tag index
+        # Fails the build if any plugin is invalid
 
       - name: Build
         run: npm run build
+        # Vite builds the React app into /dist
+        # marketplace.json is included in /dist via public/ folder
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -37,6 +42,6 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: skill-hub
           directory: dist
-          # On PRs, this creates a preview URL automatically.
-          # On main, this deploys to production.
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          # PRs → preview URL posted automatically to the PR
+          # Merges to main → production deploy (~30 seconds)

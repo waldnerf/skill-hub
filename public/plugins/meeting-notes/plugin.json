@@ -1,0 +1,15 @@
+{
+  "id": "meeting-notes",
+  "name": "Meeting Notes Structurer",
+  "version": "1.0",
+  "description": "Transforms raw meeting notes or transcripts into clean summaries with decisions, actions and owners clearly separated.",
+  "category": "Productivity",
+  "tags": ["meetings", "summary", "actions", "notes"],
+  "author": "Operations Team",
+  "approved": true,
+  "added": "2026-02-18",
+  "example_prompt": "Structure these notes from today's project standup",
+  "skill": {
+    "path": "SKILL.md"
+  }
+}

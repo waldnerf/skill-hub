@@ -1,0 +1,48 @@
+name: Plugin request / submission
+description: Request a new plugin or submit one for review
+title: "[Plugin] "
+labels: ["plugin-submission"]
+
+body:
+  - type: input
+    id: plugin-name
+    attributes:
+      label: Plugin name
+      placeholder: e.g. "Contract Reviewer"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [Data, Productivity, Communication, Strategy]
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What should this plugin do?
+      placeholder: "Help Claude review contract clauses for risk, flag ambiguous language, and summarise key obligations."
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example prompt
+      placeholder: "Review this NDA and flag any clauses that are unusual or risky for us as the vendor."
+
+  - type: input
+    id: tags
+    attributes:
+      label: Suggested tags (max 5, from tag-taxonomy.json)
+      placeholder: "legal, compliance, writing"
+
+  - type: textarea
+    id: skill-content
+    attributes:
+      label: Skill content (if submitting, not just requesting)
+      description: Paste your SKILL.md content here, or leave blank.
+      render: markdown

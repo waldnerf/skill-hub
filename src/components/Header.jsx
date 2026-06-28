@@ -1,32 +1,27 @@
 import styles from './Header.module.css'
 
-export default function Header({ totalSkills }) {
+export default function Header({ total }) {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
         <div className={styles.brand}>
-          <div className={styles.logo}>
-            <span className={styles.logoMark}>◆</span>
-          </div>
+          <div className={styles.logoMark}>◆</div>
           <div>
-            <div className={styles.brandName}>Skill Hub</div>
-            <div className={styles.brandSub}>Company-approved Claude skills</div>
+            <div className={styles.name}>Skill Marketplace</div>
+            <div className={styles.sub}>Company-approved Claude plugins</div>
           </div>
         </div>
-
-        <nav className={styles.nav}>
-          <span className={styles.navStat}>
-            <strong>{totalSkills}</strong> approved skills
-          </span>
+        <div className={styles.right}>
+          <span className={styles.stat}><strong>{total}</strong> plugins</span>
           <a
-            href="https://github.com/your-org/skill-hub/issues/new?template=skill_submission.md"
+            href="https://github.com/your-org/skill-hub/issues/new?template=plugin_submission.yml"
             target="_blank"
             rel="noreferrer"
             className={styles.submitBtn}
           >
-            Submit a skill
+            Submit a plugin
           </a>
-        </nav>
+        </div>
       </div>
     </header>
   )

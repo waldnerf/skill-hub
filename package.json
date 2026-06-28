@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "validate": "node scripts/validate-registry.js"
+    "generate": "node scripts/generate-marketplace.js",
+    "prebuild": "node scripts/generate-marketplace.js",
+    "predev": "node scripts/generate-marketplace.js"
   },
   "dependencies": {
     "react": "^19.2.7",

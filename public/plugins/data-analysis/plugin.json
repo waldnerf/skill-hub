@@ -1,0 +1,15 @@
+{
+  "id": "data-analysis",
+  "name": "Data Analysis Assistant",
+  "version": "1.1",
+  "description": "Guides exploratory data analysis, suggests the right statistical approach, writes Python/R code and interprets results in plain language.",
+  "category": "Data",
+  "tags": ["python", "statistics", "analysis", "data"],
+  "author": "Data Team",
+  "approved": true,
+  "added": "2026-03-01",
+  "example_prompt": "Help me analyse this customer churn dataset and identify key drivers",
+  "skill": {
+    "path": "SKILL.md"
+  }
+}

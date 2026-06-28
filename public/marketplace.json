@@ -1,0 +1,74 @@
+{
+  "generated": "2026-06-28T11:48:43.049Z",
+  "version": "1",
+  "total": 5,
+  "plugins": [
+    "data-analysis",
+    "email-writer",
+    "meeting-notes",
+    "pptx-builder",
+    "sql-writer"
+  ],
+  "tag_index": {
+    "actions": [
+      "meeting-notes"
+    ],
+    "analysis": [
+      "data-analysis"
+    ],
+    "analytics": [
+      "sql-writer"
+    ],
+    "communication": [
+      "email-writer"
+    ],
+    "data": [
+      "data-analysis"
+    ],
+    "database": [
+      "sql-writer"
+    ],
+    "drafting": [
+      "email-writer"
+    ],
+    "email": [
+      "email-writer"
+    ],
+    "meetings": [
+      "meeting-notes"
+    ],
+    "notes": [
+      "meeting-notes"
+    ],
+    "powerpoint": [
+      "pptx-builder"
+    ],
+    "pptx": [
+      "pptx-builder"
+    ],
+    "presentation": [
+      "pptx-builder"
+    ],
+    "python": [
+      "data-analysis"
+    ],
+    "queries": [
+      "sql-writer"
+    ],
+    "slides": [
+      "pptx-builder"
+    ],
+    "sql": [
+      "sql-writer"
+    ],
+    "statistics": [
+      "data-analysis"
+    ],
+    "summary": [
+      "meeting-notes"
+    ],
+    "writing": [
+      "email-writer"
+    ]
+  }
+}

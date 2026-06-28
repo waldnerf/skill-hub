@@ -1,0 +1,15 @@
+{
+  "id": "pptx-builder",
+  "name": "PowerPoint Builder",
+  "version": "2.0",
+  "description": "Creates polished, structured PowerPoint presentations from outlines or raw content. Applies slide best practices and writes speaker notes.",
+  "category": "Productivity",
+  "tags": ["slides", "presentation", "pptx", "powerpoint"],
+  "author": "Communications Team",
+  "approved": true,
+  "added": "2026-03-15",
+  "example_prompt": "Turn this project update into a 5-slide executive deck",
+  "skill": {
+    "path": "SKILL.md"
+  }
+}
