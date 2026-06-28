@@ -1,0 +1,67 @@
+[
+  {
+    "id": "sql-writer",
+    "name": "SQL Query Writer",
+    "description": "Writes, explains and optimises SQL queries for any dialect. Handles joins, CTEs, window functions and performance tuning.",
+    "category": "Data",
+    "tags": ["sql", "database", "queries", "analytics"],
+    "author": "Data Team",
+    "version": "1.2",
+    "approved": true,
+    "added": "2026-01-15",
+    "skill_url": "/skills/sql-writer/SKILL.md",
+    "example_prompt": "Write a query that shows monthly revenue by product category for the last 12 months"
+  },
+  {
+    "id": "pptx-builder",
+    "name": "PowerPoint Builder",
+    "description": "Creates polished, structured PowerPoint presentations from outlines or raw content. Applies company templates and slide best practices.",
+    "category": "Productivity",
+    "tags": ["powerpoint", "presentations", "slides", "pptx"],
+    "author": "Communications Team",
+    "version": "2.0",
+    "approved": true,
+    "added": "2026-02-03",
+    "skill_url": "/skills/pptx-builder/SKILL.md",
+    "example_prompt": "Turn this project update into a 5-slide executive deck"
+  },
+  {
+    "id": "meeting-notes",
+    "name": "Meeting Notes Structurer",
+    "description": "Transforms raw meeting notes or transcripts into clean summaries with decisions, actions and owners clearly separated.",
+    "category": "Productivity",
+    "tags": ["meetings", "notes", "summary", "actions"],
+    "author": "Operations Team",
+    "version": "1.0",
+    "approved": true,
+    "added": "2026-02-18",
+    "skill_url": "/skills/meeting-notes/SKILL.md",
+    "example_prompt": "Structure these notes from today's project standup"
+  },
+  {
+    "id": "data-analysis",
+    "name": "Data Analysis Assistant",
+    "description": "Guides exploratory data analysis, suggests the right statistical approach, writes Python/R code and interprets results in plain language.",
+    "category": "Data",
+    "tags": ["python", "statistics", "analysis", "pandas", "r"],
+    "author": "Data Team",
+    "version": "1.1",
+    "approved": true,
+    "added": "2026-03-01",
+    "skill_url": "/skills/data-analysis/SKILL.md",
+    "example_prompt": "Help me analyse this customer churn dataset and identify key drivers"
+  },
+  {
+    "id": "email-writer",
+    "name": "Professional Email Writer",
+    "description": "Drafts clear, well-toned professional emails for any situation — proposals, follow-ups, difficult conversations, stakeholder updates.",
+    "category": "Communication",
+    "tags": ["email", "writing", "communication", "drafting"],
+    "author": "HR Team",
+    "version": "1.3",
+    "approved": true,
+    "added": "2026-03-20",
+    "skill_url": "/skills/email-writer/SKILL.md",
+    "example_prompt": "Write a follow-up email to a client who hasn't responded in two weeks"
+  }
+]
